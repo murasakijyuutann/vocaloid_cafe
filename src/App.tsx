@@ -1,6 +1,7 @@
-import React, { FC, type FormEvent } from "react";
+import React from "react";
+import type { FormEvent } from "react"; // ✅ type-only import
 
-const VocaloidCafe: FC = () => {
+const VocaloidCafe: React.FC = () => {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     alert("お問い合わせを送信しました！");
@@ -12,7 +13,6 @@ const VocaloidCafe: FC = () => {
       <header>
         <nav className="bg-cyan-400 sticky top-0 z-50">
           <ul className="flex flex-col sm:flex-row justify-center gap-2 sm:gap-6 py-4 text-white font-bold">
-            {/* ⬅️ mobile = stacked (flex-col), tablet+ = row (sm:flex-row) */}
             <li><a href="#home" className="hover:underline">ホーム</a></li>
             <li><a href="#about" className="hover:underline">ボカロカフェについて</a></li>
             <li><a href="#menu" className="hover:underline">メニュー</a></li>
@@ -22,10 +22,9 @@ const VocaloidCafe: FC = () => {
         </nav>
         <div>
           <img
-            src="src/img/mikumikubeam.gif"
+            src="img/mikumikubeam.gif"
             alt="Header"
             className="w-full h-48 sm:h-64 md:h-80 object-cover"
-            /* ⬅️ height grows with screen size */
           />
         </div>
       </header>
@@ -37,7 +36,6 @@ const VocaloidCafe: FC = () => {
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold">
             ボカロカフェへようこそ
           </h1>
-          {/* ⬅️ text size increases at sm & lg */}
           <p>ここでは、ボカロキャラクターたちがあなたをお出迎えします。</p>
           <p>営業時間: 10:00 AM - 10:00 PM（定休日: 水曜日）</p>
         </section>
@@ -50,16 +48,14 @@ const VocaloidCafe: FC = () => {
             限定ドリンクやデザートを楽しみながら、映像や音楽の世界に浸ってください。
           </p>
           <img
-            src="src/img/100484676_p0.jpg"
+            src="img/100484676_p0.jpg"
             alt="Vocaloid Group"
             className="w-full rounded-md shadow-md max-h-64 sm:max-h-80 lg:max-h-[400px] object-cover"
-            /* ⬅️ image height scales up with screen size */
           />
         </section>
 
-        {/* Menu + Events side by side on PC */}
+        {/* Menu + Events */}
         <div className="flex flex-col lg:flex-row gap-8">
-          {/* Menu */}
           <section id="menu" className="flex-1 space-y-4">
             <h2 className="text-xl sm:text-2xl font-semibold">メニュー</h2>
             <ul className="divide-y divide-gray-300 bg-white shadow-md rounded-md">
@@ -72,7 +68,6 @@ const VocaloidCafe: FC = () => {
             </ul>
           </section>
 
-          {/* Events */}
           <section id="events" className="flex-1 space-y-2">
             <h2 className="text-xl sm:text-2xl font-semibold">イベント情報</h2>
             <p>
@@ -82,7 +77,6 @@ const VocaloidCafe: FC = () => {
             <p>期間限定コラボメニューやグッズも登場予定です！</p>
           </section>
         </div>
-        {/* ⬅️ On mobile/tablet = stacked (flex-col), PC+ = side by side (lg:flex-row) */}
 
         {/* Contact */}
         <section id="contact" className="space-y-4">
@@ -90,7 +84,6 @@ const VocaloidCafe: FC = () => {
           <form
             onSubmit={handleSubmit}
             className="flex flex-col gap-4 max-w-full sm:max-w-md"
-            /* ⬅️ form fills full width on mobile, limited on tablet+ */
           >
             <label className="flex flex-col text-sm font-medium">
               お名前:
