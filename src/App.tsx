@@ -22,7 +22,7 @@ const VocaloidCafe: React.FC = () => {
         </nav>
         <div>
           <img
-            src="img/mikumikubeam.gif"
+            src="/vocaloid_cafe/img/mikumikubeam.gif"
             alt="Header"
             className="w-full h-48 sm:h-64 md:h-80 object-cover"
           />
@@ -48,7 +48,7 @@ const VocaloidCafe: React.FC = () => {
             限定ドリンクやデザートを楽しみながら、映像や音楽の世界に浸ってください。
           </p>
           <img
-            src="img/100484676_p0.jpg"
+            src="/vocaloid_cafe/img/100484676_p0.jpg"
             alt="Vocaloid Group"
             className="w-full rounded-md shadow-md max-h-64 sm:max-h-80 lg:max-h-[400px] object-cover"
           />
